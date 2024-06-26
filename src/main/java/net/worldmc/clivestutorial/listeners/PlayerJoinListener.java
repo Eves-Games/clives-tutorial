@@ -12,6 +12,7 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        event.joinMessage(null);
         Component message = Component.text("Click this message to continue")
                 .color(NamedTextColor.GOLD)
                 .clickEvent(ClickEvent.runCommand("/continue"))
