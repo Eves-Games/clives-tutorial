@@ -1,0 +1,9 @@
+name: ClivesTutorial
+version: '${project.version}'
+main: net.worldmc.clivestutorial.ClivesTutorial
+api-version: '1.20'
+author: "Ezekiel Pari"
+commands:
+  continue:
+    description: Continue the tutorial dialogue
+    usage: /<command>
