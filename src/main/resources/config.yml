@@ -1,9 +1,10 @@
+message-delay: 8 #seconds
 dialogue:
-  - "<green>Hey there! I'm Clive. I'm a talking donkey and stuff."
-  - "<green>Welcome to WorldMC. <dark_aqua>It's awesome!</dark_aqua> <italic>I'm not programmed to say that!"
-  - "<green>Basically, it's earth in Minecraft - and just like the real thing, its got <red>war, greed, injustice, death and destruction!</red> Yippee...!"
-  - "<green>Enough with my existential crisis. Let me tell you some stuff. <light_purple>Read what I'm gonna say or embarrass yourself by asking later!"
-  - "<green>We use the towny plugin. Basic commands:<newline><aqua>/town create, claim, invite, join, leave<newline><green><italic>You''ll figure it out as you go, trust me."
+  - "<green>Hey there! I'm Clive."
+  - "<green>Welcome to <b><gradient:#00AA00:#FFAA00>WorldMC</gradient></b>. <dark_aqua>It's earth in Minecraft!</dark_aqua>"
+  - "<green>And, just like the real thing, its got <red>war, economy, towns, and people!</red> You'll have a lot to do!"
+  - "<green>Let me tell you how things are done around here.<newline><light_purple>Pay attention now."
+  - "<green>We use the towny plugin. Basic commands include:<newline><aqua>/town create, claim, invite, join, leave<newline><green><italic>You''ll figure it out as you go, trust me."
   - "<green>Rules are pretty chill:<newline><dark_aqua>
     • Don't be a jerk with town names<newline>
     • No discrimination (we're better than that)<newline>
