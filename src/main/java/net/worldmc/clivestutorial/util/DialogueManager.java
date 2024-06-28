@@ -11,6 +11,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,6 +51,7 @@ public class DialogueManager {
         @Override
         public void run() {
             if (index >= dialogues.size()) {
+                sendTutorialCompletedMessage(player);
                 sendFinalMessage(player);
                 task.cancel();
                 return;
@@ -64,6 +68,18 @@ public class DialogueManager {
         public void runTaskTimer(ClivesTutorial plugin, long delay, long period) {
             this.task = plugin.getServer().getScheduler().runTaskTimer(plugin, this, delay, period);
         }
+    }
+
+    private void sendTutorialCompletedMessage(Player player) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        DataOutputStream out = new DataOutputStream(stream);
+        try {
+            out.writeUTF("tutorial_done");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        player.sendPluginMessage(plugin, "clives:tutorial", stream.toByteArray());
     }
 
     private void sendFinalMessage(Player player) {

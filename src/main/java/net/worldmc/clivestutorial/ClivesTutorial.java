@@ -20,6 +20,9 @@ public final class ClivesTutorial extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerChatListener(), this);
 
+        // Register messages
+        getServer().getMessenger().registerOutgoingPluginChannel(this, "clives:tutorial");
+
         // Register commands
         registerContinueCommand();
     }
