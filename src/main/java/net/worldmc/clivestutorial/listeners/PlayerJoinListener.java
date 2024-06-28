@@ -13,7 +13,7 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         event.joinMessage(null);
-        Component message = Component.text("Click this message to continue")
+        Component message = Component.text("Click this message to start the tutorial (~1 Minute).")
                 .color(NamedTextColor.GOLD)
                 .clickEvent(ClickEvent.runCommand("/continue"))
                 .hoverEvent(HoverEvent.showText(Component.text("Click to start the tutorial")));
