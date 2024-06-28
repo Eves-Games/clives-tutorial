@@ -1,5 +1,6 @@
 package net.worldmc.clivestutorial.commands;
 
+import net.worldmc.clivestutorial.util.DialogueManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -8,10 +9,10 @@ import net.worldmc.clivestutorial.ClivesTutorial;
 import org.jetbrains.annotations.NotNull;
 
 public class ContinueCommand implements CommandExecutor {
-    private final ClivesTutorial plugin;
+    private final DialogueManager dialogueManager;
 
     public ContinueCommand(ClivesTutorial plugin) {
-        this.plugin = plugin;
+        this.dialogueManager = plugin.getDialogueManager();
     }
 
     @Override
@@ -22,7 +23,7 @@ public class ContinueCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        plugin.getDialogueManager().startDialogue(player);
+        dialogueManager.startDialogue(player);
         return true;
     }
 }
