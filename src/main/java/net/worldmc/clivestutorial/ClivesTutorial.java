@@ -1,6 +1,7 @@
 package net.worldmc.clivestutorial;
 
 import net.worldmc.clivestutorial.commands.ContinueCommand;
+import net.worldmc.clivestutorial.listeners.PlayerChatListener;
 import net.worldmc.clivestutorial.listeners.PlayerJoinListener;
 import net.worldmc.clivestutorial.util.DialogueManager;
 import org.bukkit.command.PluginCommand;
@@ -12,10 +13,12 @@ public final class ClivesTutorial extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        saveDefaultConfig();
         dialogueManager = new DialogueManager(this);
 
         // Register events
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerChatListener(), this);
 
         // Register commands
         registerContinueCommand();
